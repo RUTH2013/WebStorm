@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景透明的圆角</title>
+    <style>
+        body{background-color: #0f0f14}
+       .btn{width: 100px; margin: 0 auto; background: url("lesson09_img3/btn.gif") repeat-x;}
+       .btnL{background: url("lesson09_img3/btnL.gif") no-repeat; position: relative;
+           left:-9px;}
+       .btnR{background: url("lesson09_img3/btnR.gif") no-repeat right 0;height:25px;
+           position: relative;right:-18px; }
+
+        /*
+        图片保存为gif格式    将左右两个角拼在两侧，不是之前的覆盖
+        */
+    </style>
+</head>
+<body>
+<div class="btn">
+    <div class="btnL">
+        <div class="btnR"></div>
+    </div>
+</div>
+</body>
+</html>

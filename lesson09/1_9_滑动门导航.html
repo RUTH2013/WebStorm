@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动门导航</title>
+    <style>
+        body,ul{margin: 0;padding: 0;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+        body{background: #23232f;padding:50px; }
+        .nav{background: #0f0f14 url("lesson09_img/navL.png") no-repeat; float: left;}
+        .navR{background: url("lesson09_img/navR.png") no-repeat right 0;float: left;
+            padding: 4px 4px 0px 3px;
+        }
+        .nav li{float: left;padding-left: 1px;}
+        .nav a{float: left;background: url("lesson09_img/btn2.png") no-repeat;}
+        .nav span{float: left;background: url("lesson09_img/btnR.png") no-repeat right 0;
+            height: 31px;font-size: 14px;line-height: 30px;color: #fff;
+            padding: 0 18px;
+        }
+        /* 鼠标滑过显示的颜色，以及当前按钮页面的颜色 */
+        .nav a:hover,.nav .active{background-image: url("lesson09_img/hoverA.png")}
+        .nav a:hover span,.nav .active span{background-image: url("lesson09_img/hoverR.png"); }
+
+
+        /*
+            元素的宽度由内容撑开：
+            display:inline;不支持高度
+            display:inline-block;在IE6、7下不支持块标签
+            float;
+            position:absolute;
+            position:fixed;不接荣
+        */
+    </style>
+</head>
+<body>
+<div class="nav">
+     <ul class="navR">
+         <li>
+             <a href="#" class="active">
+                 <span>MiaoV</span>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <span>课程</span>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <span>关于我们</span>
+             </a>
+         </li>
+         <li>
+             <a href="#">
+                 <span>加入MiaoV</span>
+             </a>
+         </li>
+     </ul>
+</div>
+</body>
+</html>

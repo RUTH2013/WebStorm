@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景透明的圆角_2</title>
+    <style>
+        body{background-color: #0f0f14}
+        .btnL{width: 100px; margin: 0 auto; background: url("lesson09_img3/btnL.gif") no-repeat;}
+        .btnR{background: url("lesson09_img3/btnR.gif") no-repeat right 0;}
+        .btn{background: url("lesson09_img3/btn.gif")  repeat-x;height:25px;
+           margin: 0 9px; }
+
+        /*
+        与之前一种是调换顺序，先是两边，再覆盖中间，中间那个设置左右外边距，空出两边
+        */
+
+
+    </style>
+</head>
+<body>
+<div class="btnL">
+    <div class="btnR">
+        <div class="btn"></div>
+    </div>
+</div>
+</body>
+</html>

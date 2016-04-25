@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宽度课扩展的圆角</title>
+    <style>
+        .box{width: 200px;margin: 30px auto;}
+        .boxHead{background:url("lesson09_img2/boxH.png") repeat-x; overflow: hidden}
+        .boxHeadL{background: url("lesson09_img2/boxHL.png") no-repeat ;}
+        .boxHeadR{background: url("lesson09_img2/boxHR.png") no-repeat right 0;height: 9px;}
+
+        .boxFoot{background: url("lesson09_img2/boxF.png") repeat-x;overflow: hidden}
+        .boxFootL{background: url("lesson09_img2/boxFL.png") no-repeat ;}
+        .boxFootR{background: url("lesson09_img2/boxFR.png") no-repeat right 0;height: 9px;}
+
+        .boxC{border-right: 2px solid #e5e5e5;border-left: 2px solid #e5e5e5;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="boxHead">
+        <div class="boxHeadL">
+            <div class="boxHeadR"></div>
+        </div>
+    </div>
+    <div class="boxC">
+        &nbsp;&nbsp;页面内容 <br>
+        &nbsp;&nbsp;页面内容 <br>
+        &nbsp;&nbsp;页面内容 <br>
+        &nbsp;&nbsp;页面内容 <br>
+    </div>
+    <div class="boxFoot">
+        <div class="boxFootL">
+            <div class="boxFootR"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

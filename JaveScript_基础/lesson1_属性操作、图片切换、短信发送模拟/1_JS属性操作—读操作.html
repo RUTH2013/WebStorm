@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS属性操作——读操作</title>
+    <script>
+        window.onload =function(){
+            var oBtn = document.getElementById('btn1');
+            var oText = document.getElementById('text1');
+            var oSelect = document.getElementById('select1');
+            oBtn.onclick = function(){
+                //alert(oBtn.type);
+
+                //字符串连接
+                alert(oBtn.id+oText.value+'在'+oSelect.value);
+            };
+        };
+    </script>
+</head>
+<body>
+<input id="text1" type="text" value="">
+<select name="" id="select1">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="杭州">杭州</option>
+</select>
+<input id="btn1" type="button" value="按钮" >
+</body>
+</html>

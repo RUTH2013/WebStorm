@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字放大缩小</title>
+    <script>
+        window.onload = function () {
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oP = document.getElementById('p1');
+            var num = 14; //字符大小
+
+            oBtn1.onclick = function(){
+                num = num +1;
+                //alert(num);
+                oP.style.fontSize=num+'px';
+                //JS不允许出现"-"
+                //font-size   fontSize
+            }
+            oBtn2.onclick = function(){
+                num = num -1;
+                oP.style.fontSize=num+'px';
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="+">
+<input id="btn2" type="button" value="-">
+<p id="p1" style="font-size: 14px;">莫筠一生毫无保留的爱过了一次，最终落得粉身碎骨的下场。一颗佛珠，一场仙缘，意外打开两界穿梭之门。
+    回到这段感情之初，毅然转身。不一样的选择，不一样的人生。归来的男神，且看如何风起云涌！<br>
+    莫筠未想过，有一天还会回到这个曾经让他伤痕累累死无全尸的世界。感情的失败者，武力值上的废柴，惨烈的死亡都换不来那人回头的一眼，
+    看着已然掏心掏肺爱了两年的恋人，这一世莫筠选择转身离去。当那份感情再也生不起丁点涟漪时，他还会是个失败者吗？手握逆天至宝，
+    当另一个世界有着取之不尽的灵草丹药，武力的废柴？惨烈的人生？上一世他所失去的一切，都会一点一点讨回来！</p>
+</body>
+</html>

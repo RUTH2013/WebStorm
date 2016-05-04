@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[]中括号的使用</title>
+    <style>
+        #div1{width: 240px; height: 200px;border: 5px solid #cc0000;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oAttr = document.getElementById('attr1');
+            var oVal = document.getElementById('val1');
+            var oBtn = document.getElementById('btn1');
+            var oDiv = document.getElementById('div1');
+
+
+            oBtn.onclick = function(){
+               // oAttr.value; 'width'  'background'
+               // oVal.value;  '30px'   'red'
+                oDiv.style[oAttr.value] = oVal.value;
+            };
+        };
+    </script>
+</head>
+<body>
+请输入属性名：<input type="text" id="attr1" ><br>
+请输入属性值：<input type="text" id="val1" ><br>
+<input type="button" id="btn1" value="确定"><br>
+<div id="div1"></div>
+</body>
+</html>

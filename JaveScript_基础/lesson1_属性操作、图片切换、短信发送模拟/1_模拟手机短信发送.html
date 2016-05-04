@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟手机短信发送</title>
+    <style>
+        #div1{width: 240px; height: 500px; border: 1px solid #333;
+            background: #f1f1f1; padding: 10px;
+        }
+        img{border: none;vertical-align: top;width:40px;margin: 0 5px;}
+        p{margin: 0;}
+        .right{text-align: right; background-color: green;}
+        .left{text-align: left;background-color: dimgrey;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv =document.getElementById('div1');
+            var oText =document.getElementById('text1');
+            var oBtn =document.getElementById('btn1');
+            var oImg =document.getElementById('img1');
+            var onOff = true ;//图片开关判断
+
+            oBtn.onclick = function(){
+                //oDiv.innerHTML=oText.value;//替换
+                //添加信息
+                if(onOff ){
+                    oDiv.innerHTML=oDiv.innerHTML+'<p class="right">' +oText.value+ '<img src=" '+oImg.src+' ">'+'</p>'+'<br>';
+                    oText.value = '';
+                }else{
+                    oDiv.innerHTML=oDiv.innerHTML+'<p class="left">' + '<img src=" '+oImg.src+' ">'+oText.value+ '</p>'+'<br>';
+                    oText.value = '';
+                }
+            };
+
+            oImg.onclick = function(){
+                if(onOff ){
+                    oImg.src = 'img/3.jpg';
+                    onOff=false;
+                }else{
+                    oImg.src = 'img/1.jpg';
+                    onOff=true;
+                }
+
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<img id="img1" src="img/1.jpg" alt="" >
+<input id="text1" type="text">
+<input id="btn1" type="button" value="发送">
+</body>
+</html>

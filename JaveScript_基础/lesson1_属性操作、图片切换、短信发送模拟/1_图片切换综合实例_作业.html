@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换综合实例_作业</title>
+    <style>
+        body{font-family: 宋体}
+        #content{ width: 400px; height: 400px; border: 10px solid #ccc;margin: 10px auto 0;
+            position: relative;background: #f1f1f1;}
+        #content a{width: 40px; height: 40px; background: #000; border: 5px solid #fff;position: absolute;top: 175px;
+            text-align: center;text-decoration: none;line-height:40px;color: #fff; font-size: 30px;font-weight: bolder;
+            filter: alpha(opacity:30);opacity: 0.3;
+        }
+        #content a:hover {filter: alpha(opacity:80);opacity: 0.8;}
+        #prev{left: 10px;}
+        #next{right: 10px;}
+        #text{position: absolute; bottom: 0; left:0; width: 400px;height: 30px;line-height: 30px; text-align: center;
+            color: #fff; background: #000;filter: alpha(opacity:50);opacity: 0.5; margin: 0;
+        }
+        #span1{position: absolute;top: 0; left:0; width: 400px;height: 30px;line-height: 30px; text-align: center;
+            color: #fff; background: #000;filter: alpha(opacity:50);opacity: 0.5; }
+        #img1{width: 400px; height: 400px;}
+
+        #button{text-align: center;line-height:30px;color: #000;margin: 40px auto 0;font-size: 20px;}
+
+
+    </style>
+    <script>
+        window.onload = function(){
+            var oPrev = document.getElementById('prev');
+            var oNext = document.getElementById('next');
+            var oText = document.getElementById('text');
+            var oSpan = document.getElementById('span1');
+            var oImg = document.getElementById('img1');
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oText2 = document.getElementById('text2');
+
+            var arrUrl =['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];//用来存放图片的数组
+            var arrText =['游戏mm','人造运动员','性感美女','古装游戏美眉'];//图片说明
+
+            var num = 0;//计算图片位数
+
+            //初始化
+            function  fnTab(){
+                oSpan.innerHTML = num + 1 +'/'+ arrText.length;
+                oImg.src = arrUrl[num];
+                oText.innerHTML = arrText[num];
+            };
+            fnTab();
+           //循环切换
+            oBtn1.onclick = function() {
+                oText2.innerHTML='图片可从最后一张跳转到第一张切换';
+                oNext.onclick = function () {
+                    num = num + 1;
+                    if (num == arrText.length) {
+                        num = 0;
+                    }
+                    fnTab();
+                };
+                oPrev.onclick = function () {
+                    num = num - 1;
+                    if (num == -1) {
+                        num = arrText.length - 1;
+                    }
+                    fnTab();
+                };
+            };
+            //顺序 切换
+            oBtn2.onclick = function() {
+                oText2.innerHTML='图片只能到最后一张或者只能到第一张切换';
+                oNext.onclick = function () {
+                    num = num + 1;
+                    if (num == 4) {
+                        num = 3;
+                        alert('已经是最后一张图片!')
+                    }
+                    fnTab();
+                };
+                oPrev.onclick = function () {
+                    num = num - 1;
+                    if (num == -1) {
+                        num = 1;
+                        alert('已经是第一张图片!')
+                    }
+                    fnTab();
+                };
+            };
+
+
+
+
+        };
+    </script>
+</head>
+<body>
+<div id="button">
+    <input id="btn1" type="button" value="循环切换">
+    <input id="btn2" type="button" value="顺序切换">
+    <p id="text2">请选择切换方式</p>
+</div>
+<div id="content">
+    <a id="prev" href="javascript:;"> < </a>
+    <a id="next" href="javascript:;"> > </a>
+    <p id="text">图片文字加载中……</p>
+    <span id="span1">数量正在计算中……</span>
+    <img id="img1" alt="">
+</div>
+</body>
+</html>

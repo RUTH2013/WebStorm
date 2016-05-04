@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参实例_商品价格计算</title>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementById('list');
+            var aLi = oUl.getElementsByTagName('li');
+            var oP = document.getElementById('p1');
+            
+            //fn1(aLi[0]);
+            for (var i=0; i<aLi.length;i++){//函数的传参
+                fn1(aLi[i]);
+
+            }
+            //单个li的实现
+            function fn1(oLi){
+                var aBtn = oLi.getElementsByTagName('input');
+                var aStrong = oLi.getElementsByTagName('strong')[0];
+                var aEm = oLi.getElementsByTagName('em')[0];
+                var aSpan = oLi.getElementsByTagName('span')[0];
+                var n1 =Number(aStrong.innerHTML);    //'0' =>0
+                var n2 =parseFloat(aEm.innerHTML) ;   //‘12.5元’=>12.5
+
+                aBtn[0].onclick = function () {//+按钮
+                    //n1=n1+1;
+                    n1 ++;
+                    //alert(n1);
+                    aStrong.innerHTML = n1;
+                    aSpan.innerHTML = n1*n2 +'元';
+
+                }
+                aBtn[1].onclick = function () {//+按钮
+                    n1 --;
+                    if (n1<0){
+                       n1=0;
+                    }
+                    aStrong.innerHTML = n1;
+                    aSpan.innerHTML = n1*n2 +'元';
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <input type="button" value="+">
+        <strong>0</strong>
+        <input type="button" value="-">
+        单价: <em>12.5元</em>
+        小计: <span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="+">
+        <strong>0</strong>
+        <input type="button" value="-">
+        单价: <em>10.5元</em>
+        小计: <span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="+">
+        <strong>0</strong>
+        <input type="button" value="-">
+        单价: <em>18.5元</em>
+        小计: <span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="+">
+        <strong>0</strong>
+        <input type="button" value="-">
+        单价: <em>17.5元</em>
+        小计: <span>0元</span>
+    </li>
+    <li>
+        <input type="button" value="+">
+        <strong>0</strong>
+        <input type="button" value="-">
+        单价: <em>11.5元</em>
+        小计: <span>0元</span>
+    </li>
+</ul>
+<p id="p1">
+    商品合计共：<span>0</span> 件，共花费了：<span>0</span>元 <br>
+    其中最贵的商品单价是：<span>0</span>元
+</p>
+</body>
+</html>

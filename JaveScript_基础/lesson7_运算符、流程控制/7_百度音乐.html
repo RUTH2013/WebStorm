@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度音乐</title>
+    <style>
+        body{font-size: 24px; }
+        ul{float: left; margin: 16px;padding: 0;}
+        li{list-style: none;margin-bottom: 5px;}
+        span{margin: 0px;margin-left:200px;}
+
+    </style>
+    <script>
+        window.onload = function () {
+            var aInput = document.getElementsByTagName('input');
+            var aLi = document.getElementsByTagName('li');
+            var arr = ['#bbebf9','lightskyblue'];
+            for(var i=0; i<aLi.length; i++){
+                //alert(i);
+                aLi[i].index = i;//第一种
+                aLi[i].style.background = arr[i%arr.length] ;
+                aLi[i].onmouseover = function () {
+                    str = this.style.background;//第二种
+                    this.style.background = 'gray';
+                };
+                aLi[i].onmouseout = function () {
+                    //this.style.background = arr[this.index%arr.length];//第一种
+                    this.style.background = str;//第二种
+                };
+                aInput[i].onclick= function (){
+                    if(aInput[this.index%(aInput.length-1)].checked){
+                        aInput[6].checked = true;
+                    }
+                };
+                aInput[6].onclick= function () {
+                    if (aInput[6].checked) {
+                        for (var i = 0; i < aInput.length; i++) {
+                            aInput[i].checked = true;
+                        }
+                    }else {//alert(1);
+                        for (var j = 0; j < aInput.length; j++) {
+                            aInput[j].checked = false;
+                        }
+                    }
+                };
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+
+<ul>
+    <li><input type="checkbox">私奔<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;梁博</span> </li>
+    <li><input type="checkbox">北京北京<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;梁博，黄勇</span> </li>
+    <li><input type="checkbox">我爱你中国<span>&nbsp;&nbsp;&nbsp;&nbsp;梁博</span></li>
+    <li><input type="checkbox">花火<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;梁博</span></li>
+    <li><input type="checkbox">回来<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;梁博</span></li>
+    <li><input type="checkbox">爱要有你才完美<span>梁博，那英</span> </li>
+    <li><input type="checkbox">全选</li>
+</ul>
+
+</body>
+</html>

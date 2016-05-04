@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符--%(取模)</title>
+    <script>
+        var s= 65;
+        alert(Math.floor(s/60)+'分'+s%60 + '秒');
+        window.onload = function () {
+            var oUl = document.getElementById('ul');
+            var aLi = document.getElementsByTagName('li');
+            var arr = ['red','yellow','blue'];
+            var str = '';//第二种
+            for(var i=0; i<aLi.length; i++){
+                //alert(i);
+                aLi[i].index = i;//第一种
+                aLi[i].style.background = arr[i%arr.length] ;
+                aLi[i].onmouseover = function () {
+                    str = this.style.background;//第二种
+                    this.style.background = 'gray';
+                }
+                aLi[i].onmouseout = function () {
+                    //this.style.background = arr[this.index%arr.length];//第一种
+                    this.style.background = str;//第二种
+                }
+            }
+        }
+    </script>
+    <style>
+        li{height: 24px; margin-bottom: 5px; list-style: none;}
+    </style>
+</head>
+<body>
+<ul id="ui1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

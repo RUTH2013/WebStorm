@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评价文档</title>
+    <style>
+        #span1{font-size: 14px;}
+        .value-star {
+            display: inline-block;
+            zoom: 1;
+            width: 19px;
+            height: 19px;
+            /*background: url(img/big-stars_29169e9.png) no-repeat;*/
+            background: url(img/big-stars.png) no-repeat;
+            /*/_background: url(http://static.wenku.bdimg.com/static/wkview/widget/userEvaluation/big-stars-ie6_975d621.png) no-repeat;*/
+            vertical-align: -4px;
+            cursor: pointer;
+        }
+        #doc {
+            font-size: 12px;
+            color: #888;
+            padding-left: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oB = document.getElementsByTagName('b');
+            var oSpan = document.getElementById('doc');
+            var arr = ['很差','较差','一般','很好','力荐'];
+
+            for(var i=0; i<oB.length; i++){
+                oB[i].index = i;
+                oB[i].onmouseover = function () {
+                    for(var j=0;j<this.index+1; j++){
+                        oB[j].style.background = 'url(img/big-stars_29169e9.png) no-repeat';
+                    }
+                    oSpan.innerHTML = arr[this.index];
+                    //oB[this.index%oB.length].style.background = 'url(img/big-stars_29169e9.png) no-repeat';
+                }
+                oB[i].onmouseout = function(){
+                    for(var i=0; i<oB.length; i++){
+                        oB[i].style.background = 'url(img/big-stars.png) no-repeat';
+                    }
+                    oSpan.innerHTML = '';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="content">
+    <span id="span1">评价文档：</span>
+    <span id="star">
+        <b class="value-star"></b>
+        <b class="value-star"></b>
+        <b class="value-star"></b>
+        <b class="value-star"></b>
+        <b class="value-star"></b>
+    </span>
+    <span id="doc"></span>
+</div>
+</body>
+</html>

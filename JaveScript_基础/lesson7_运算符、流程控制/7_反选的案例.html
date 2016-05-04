@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>反选的案例</title>
+    <script>
+        window.onload = function () {
+            var aInput = document.getElementsByTagName('input')
+           // aInput[1].checked = true;
+            aInput[0].onclick = function () {
+                for (var i = 1; i<aInput.length; i++){
+                    aInput[i].checked = !aInput[i].checked;//第二种
+                 /*
+                 if(aInput[i].checked){
+                        aInput[i].checked = false;
+                    }else {
+                        aInput[i].checked = true;
+                    }//第一种
+                    */
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="反选">
+<ul>
+    <li><input type="checkbox" checked> </li>
+    <li><input type="checkbox"> </li>
+    <li><input type="checkbox"> </li>
+    <li><input type="checkbox"> </li>
+    <li><input type="checkbox"> </li>
+    <li><input type="checkbox"> </li>
+    <li><input type="checkbox"> </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+    <style>
+        li{height: 30px; border-bottom: 1px solid red;}
+    </style>
+    <script>
+        /*for (var i=0;i<3;){
+            alert(1);
+            i++;
+        }*/
+
+        window.onload = function () {
+            var oUl = document.getElementById('list');
+            var aLi = oUl.getElementsByTagName('li');
+            var arr = ['今天','明天','后天'];
+
+            for (var i = 0; i<aLi.length;i++){
+                aLi[i].innerHTML = arr[i];
+                aLi[i].onclick = function(){
+                    alert(1);
+                };
+
+            };
+
+            //document.body.innerHTML += '<input type="button" value="按钮"/>';
+            var str = '';
+            for(var j=0; j<1000; j++){
+                //document.body.innerHTML += '<input type="button" value="按钮"/>';
+                str += '<input type="button" value="按钮"/>';
+            }
+            document.body.innerHTML = str;
+
+        }
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

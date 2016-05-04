@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ByTagName动态方法特性</title>
+    <script>
+        window.onload=function(){
+            document.title=123;
+            document.body.innerHTML = 'abc';
+            var oBtn = document.getElementsByTagName('input');
+            document.body.innerHTML +='<input type="button" value="按钮"/><input type="button" value="按钮"/>'
+            //alert(oBtn.length);
+            oBtn[0].onclick = function(){alert(1);};
+            oBtn[1].onclick = function(){alert(2);};
+
+
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环遍历二维数组</title>
+    <script>
+        window.onload = function(){
+            /*var arr = [
+                    [1,2,3,4,5],
+                    [6,7,8],
+                    [9,10]
+            ]
+
+            //遍历二维数组
+            for(var i = 0;i<arr.length; i++){
+                for (var j =0;j<arr[i].length; j++){
+                    alert(arr[i][j]);
+                }
+            }*/
+
+            var oUl = document.getElementById('list');
+            var aUl = oUl.getElementsByTagName('ul');
+            var aLi = null;
+            for (var i =0;i<aUl.length;i++){
+
+                aLi = aUl[i].getElementsByTagName('li')
+                for( var j=0; j<aLi.length;j++){
+                    aLi[j].style.border='1px solid red'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>
+        <h2>我的好友</h2>
+        <ul>
+            <li>黎明</li>
+            <li>王珂</li>
+            <li>白白</li>
+        </ul>
+    </li>
+    <li>
+        <h2>我的坏友</h2>
+        <ul>
+            <li>留白</li>
+            <li>陌拜</li>
+        </ul>
+    </li>
+    <li>
+        <h2>我的黑名单</h2>
+        <ul>
+            <li>张晓华</li>
+            <li>俞白眉</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

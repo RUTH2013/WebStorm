@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动生成一组新闻</title>
+    <script>
+        window.onload = function () {
+            var arr = [
+                '莫筠一生毫无保留的爱过了一次，最终落得粉身碎骨的下场。',
+                '一颗佛珠，一场仙缘，意外打开两界穿梭之门。回到这段感情之初，毅然转身。',
+                '不一样的选择，不一样的人生。归来的男神，且看如何风起云涌！',
+                '莫筠未想过，有一天还会回到这个曾经让他伤痕累累死无全尸的世界。',
+                '感情的失败者，武力值上的废柴，惨烈的死亡都换不来那人回头的一眼，'
+            ];
+
+            var oBtn = document.getElementById('btn1');
+            var oUl = document.getElementById('list');
+            var onOff = true;
+
+            oBtn.onclick= function () {
+                //oBtn.disabled=true;第一种
+                //oBtn.style.display = 'none';第一种
+                //oUl.innerHTML = '';第二种
+
+                if (onOff){//第三种
+                    for(var i =0; i<arr.length;i++){
+                        oUl.innerHTML+='<li>'+arr[i]+'</li>';
+                    }
+                    onOff = false;
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="自动生成5条新闻">
+<ul id="list" style="border: 1px solid red">
+
+</ul>
+</body>
+</html>

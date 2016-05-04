@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器—替换背景</title>
+    <script>
+        window.onload = function () {
+            var aBtn =document.getElementsByTagName('input');
+            var arr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+            var num = 0;
+            var timer = null;
+
+            var oBody = document.body;
+            oBody.style.background = 'url(img/1.jpg) no-repeat' ;
+           // oBody.style.background = 'url('+arr[num]+') no-repeat' ;
+            aBtn[0].onclick = function () {
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    oBody.style.background = 'url('+arr[num]+') no-repeat' ;
+                    num ++;
+                    num=num%arr.length;
+                },1000);
+            }
+            aBtn[1].onclick = function () {
+                clearInterval(timer);
+            }
+        };
+        setInterval();
+        clearInterval()
+    </script>
+</head>
+<body>
+<input type="button" value="替换背景">
+<input type="button" value="停止替换">
+</body>
+</html>

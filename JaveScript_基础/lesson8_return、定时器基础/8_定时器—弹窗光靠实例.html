@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器—弹窗光靠实例</title>
+    <style>
+        body{background: url("img/sina.jpg") no-repeat center 0; text-align: center;}
+        img{display: none;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oPic = document.getElementById('pic1');
+            setTimeout(function(){
+                oPic.style.display = 'inline-block';
+                setTimeout(function(){//让广告停留三秒再关闭
+                    oPic.style.display = 'none';
+                },3000);
+            },1000);
+
+            
+        }
+    </script>
+</head>
+<body>
+<img id="pic1" src="img/miaov.jpg" alt="">
+</body>
+</html>

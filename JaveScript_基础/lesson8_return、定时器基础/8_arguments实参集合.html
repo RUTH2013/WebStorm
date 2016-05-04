@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8_arguments实参集合</title>
+    <script>
+        //fn1(1,2,3); //实参——实际传递的参数
+        function fn1(a,b,c){  //形参——形式上，abc这些名 代表123
+            //arguments=>[1,2,3]——实参的集合
+            alert(arguments.length);//3
+            alert(arguments[0]);//1
+        }
+        //加数
+        //alert(sum(1,2,3));
+        function sum(){
+            var n=0;
+            for(var i =0; i<arguments.length; i++){
+                n+=arguments[i];
+            }
+        }
+
+        var  a =1;
+        function fn1(a){
+            arguments[0] = 3;
+            alert(a);    //3
+            var a=2;
+            alert(arguments[0]);//2
+        }
+        fn1(a);
+        alert(a);//1
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器—QQ延时资料图</title>
+    <style>
+        #qq{width: 200px; height: 400px; background: #f9c;}
+        #title{width: 240px; height: 180px; background: #fc6;
+            position: absolute;  top:10px;  left:220px;display: none;
+        }
+
+    </style>
+    <script src="$符的使用.js"></script>
+    <script>
+        $(function(){
+            var qq = $('qq');
+            var title = $('title');
+            var timer = null;
+            qq.onmousemove = show;
+            qq.onmouseout = hide;
+            title.onmousemove = show;
+            title.onmouseout = hide;
+
+            function show(){
+                clearInterval(timer);
+                title.style.display = 'block';
+
+            }
+            function hide(){
+                timer = setInterval(function(){
+                    title.style.display = 'none';
+                },500);
+
+
+            }
+        });
+
+    </script>
+</head>
+<body>
+<div id="qq"></div>
+<div id="title"></div>
+</body>
+</html>

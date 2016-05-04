@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>return的用法-getID()</title>
+    <style>
+        div{width: 100px; height: 100px; background: #2B7ACD;}
+    </style>
+    <script>
+        window.onload = function () {
+            /*var oBtn =document.getElementById("btn1");
+             var oDiv = document.getElementById('div1');*/
+            // var oBtn = getId('btn1');
+            getId('btn1').onclick = function () {
+                alert(getId('div1').innerHTML) ;
+            }
+
+
+        };
+        function getId(id){
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="按钮">
+<div id="div1">123</div>
+</body>
+</html>

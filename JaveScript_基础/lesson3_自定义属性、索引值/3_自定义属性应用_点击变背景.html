@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性应用_点击变背景</title>
+    <style>
+        li{list-style: none; width: 114px; height: 140px; background: url("img/normal.png");
+            float: left;margin-right: 20px;}
+    </style>
+    <script>
+        window.onload = function () {
+            var aLi = document.getElementsByTagName('li');
+           // var onOff = true;//只能控制一组
+            for(var i = 0;i<aLi.length;i++){
+                aLi[i].onOff = true;//自定义开关属性
+                aLi[i].onclick = function () {
+
+                    if (this.onOff){
+                        this.style.background = 'url("img/active.png")';
+                        this.onOff = false;
+                    }else{
+                        this.style.background = 'url("img/normal.png")';
+                        this.onOff = true;
+                    }
+
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

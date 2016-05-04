@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3_自定义属性应用_索引值</title>
+    <script>
+        window.onload = function (){
+            var aBtn = document.getElementsByTagName('input');
+            var aP = document.getElementsByTagName('p');
+            var arr= ['默默','张增','御笔'];
+            for(var i =0; i<aBtn.length; i++){
+                aBtn[i].index = i;//自定义属性（添加索引值）
+                aBtn[i].onclick = function () {
+                    //alert(this.index);
+                   // alert(arr[this.index]);
+                    this.value = arr[this.index];
+                    aP[this.index].innerHTML= arr[this.index];
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="btn1">
+<input type="button" value="btn2">
+<input type="button" value="btn3">
+<p>a</p>
+<p>b</p>
+<p>c</p>
+</body>
+</html>

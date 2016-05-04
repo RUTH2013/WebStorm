@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义属性</title>
+    <script>
+        window.onload = function () {
+            var aBtn = document.getElementsByTagName('input');
+            /*aBtn[0].abc = 123;//自定义属性
+            alert(aBtn[0].abc);*/
+            for (var i = 0;i<aBtn.length; i++){
+                aBtn[i].abc = 123;//自定义属性
+                aBtn[i].xyz = true;
+                alert(aBtn[i].abc);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+</body>
+</html>

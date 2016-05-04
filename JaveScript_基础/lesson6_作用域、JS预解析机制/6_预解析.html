@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预解析</title>
+    <script>
+
+      //JS解析器
+        //预解析
+        // 1）、  找一些东西  ：var  function  参数
+        //    所有的变量，在正式运行代码前，都提前赋了一个值：未定义
+        //    所有的函数，在正式运行代码前，都是整个函数块
+        // 。JS预解析
+        //    遇到重名的：只留下一个
+        //          变量和函数重名是只留下 函数
+             //   a = function a(){alert(4);}
+
+        // 2）、 逐行解读代码：（看表达式）
+        //    表达式：=、+、-、*、/、%、++、--、！、参数...
+        // 表达式可以修改预解析的值！
+
+        alert(a);   // function a(){alert(4);}
+        var a= 1;
+        alert(a);   // 1
+        function a(){alert(2); }
+        alert(a);   // 1
+        var a= 3;
+        alert(a);   // 3
+        function a(){alert(4);}
+        alert(a);    // 3
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

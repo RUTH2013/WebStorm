@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抖动的封装</title>
+    <style>
+        img{position: absolute; top: 200px; left: 500px; width: 300px;}
+        #img1{left: 100px;]}
+    </style>
+    <script src="myjs.js"></script>
+    <script>
+        window.onload = function () {
+            var oImg1 = document.getElementById('img1');
+            var oImg2 = document.getElementById('img2');
+            oImg1.onclick = fnShake;
+            oImg2.onclick = fnShake;
+
+            function fnShake() {
+                var _this = this;
+                shake(_this,'left',function(){
+                    shake(_this,'top');
+                });
+            }
+        };
+        function shake(obj,attr,endFn){  //抖动
+            var pos = parseInt(getStyle(obj,attr));//获取img的位置
+            var num = 0;
+            obj.shake=null;
+
+            var arr = [];  //20,-20,18,-18.....
+            for(var i = 20 ; i>0; i-=2){
+                arr.push(i,-i);
+            }
+
+            clearInterval(obj.shake);
+            obj.shake = setInterval(function(){
+                obj.style[attr]= pos + arr[num] + 'px';
+                num++;
+                if(num===arr.length){
+                    clearInterval(obj.shake);
+                    endFn&&endFn();
+                }
+            },20);
+        }
+    </script>
+</head>
+<body>
+<img id="img1" src="img/1.jpg" alt="">
+<img id="img2" src="img/5.jpg" alt="">
+</body>
+</html>

@@ -8,6 +8,10 @@
             var oUl = document.getElementById('list');
             var aLi = oUl.getElementsByTagName('li');
             var oP = document.getElementById('p1');
+            var sum = 0;//商品总数
+            var sumMoney = 0;//总价格
+            var pri = 0;//最贵单价
+            var lastPri = 0;//之前的最贵单价
             
             //fn1(aLi[0]);
             for (var i=0; i<aLi.length;i++){//函数的传参
@@ -26,18 +30,38 @@
                 aBtn[0].onclick = function () {//+按钮
                     //n1=n1+1;
                     n1 ++;
+                    sum ++;
+                    sumMoney +=n2;
+                    if(n2>pri){
+                        lastPri =pri;
+                        pri = n2;
+                    }
                     //alert(n1);
                     aStrong.innerHTML = n1;
                     aSpan.innerHTML = n1*n2 +'元';
+                    oP.innerHTML = '商品合计共：'+sum+'件，共花费了：'+sumMoney+'元 <br>其中最贵的商品单价是：'+pri+'元';
 
-                }
-                aBtn[1].onclick = function () {//+按钮
+                };
+                aBtn[1].onclick = function () {//-按钮
                     n1 --;
-                    if (n1<0){
-                       n1=0;
+                    sum --;
+                    sumMoney -=n2;
+                    if (n1<=0){
+                        n1=0;
+                        sum ++;
+                        sumMoney +=n2;
+                        pri =lastPri;
+
+                    }
+                    if(sum==0){
+                        pri = 0;
+                        sum = 0;
+                        sumMoney = 0;
                     }
                     aStrong.innerHTML = n1;
                     aSpan.innerHTML = n1*n2 +'元';
+                    oP.innerHTML = '商品合计共：'+sum+'件，共花费了：'+sumMoney+'元 <br>其中最贵的商品单价是：'+pri+'元';
+
                 }
             }
         }
@@ -83,8 +107,8 @@
     </li>
 </ul>
 <p id="p1">
-    商品合计共：<span>0</span> 件，共花费了：<span>0</span>元 <br>
-    其中最贵的商品单价是：<span>0</span>元
+    商品合计共：0 件，共花费了：0元 <br>
+    其中最贵的商品单价是：0元
 </p>
 </body>
 </html>

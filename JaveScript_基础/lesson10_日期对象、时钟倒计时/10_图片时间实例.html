@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片时间实例</title>
+    <script>
+        window.onload = function () {
+            var oBody = document.body;
+            var oP = document.getElementById('time');
+            var aImg = document.getElementsByTagName('img');
+
+            setInterval(fnTime,1000);
+            fnTime();
+            function fnTime(){
+                var myTime = new Date();
+                var iHours = myTime.getHours();
+                var iMin = myTime.getMinutes();
+                var iSec = myTime.getSeconds();
+
+                var str = '';
+                str = toTwo(iHours)+':'+toTwo(iMin)+':'+toTwo(iSec);
+
+                oP.innerHTML = str;
+
+                var i=0;
+                for (; i<2; i++){
+                    aImg[i].src = 'img/'+str.charAt(i) +'.JPG';
+                }
+                for (i=3; i<5; i++){
+                    aImg[i].src = 'img/'+str.charAt(i) +'.JPG';
+                }
+                for (i=6; i<str.length; i++){
+                    aImg[i].src = 'img/'+str.charAt(i) +'.JPG';
+                }
+                aImg[2].src = 'img/colon.JPG';
+                aImg[5].src = 'img/colon.JPG';
+
+
+            }
+            function toTwo(n){//让数字变成两位数，0->05
+                return n<10?'0'+n:''+n;
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<p id="time" style="font-size: 50px;"></p>
+<img src="img/0.JPG" alt="">
+<img src="img/1.JPG" alt="">
+<img src="img/2.JPG" alt="">
+<img src="img/3.JPG" alt="">
+<img src="img/4.JPG" alt="">
+<img src="img/5.JPG" alt="">
+<img src="img/6.JPG" alt="">
+<img src="img/7.JPG" alt="">
+
+</body>
+</html>

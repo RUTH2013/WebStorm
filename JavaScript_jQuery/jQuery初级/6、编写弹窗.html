@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编写弹窗</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <style>
+        *{margin: 0;  padding:0;}
+        #login{width: 300px; height: 300px; border: 1px solid #000; position: absolute;}
+        #close {position: absolute;right: 0; top: 0; cursor: pointer;}
+    </style>
+    <script>
+        $(function(){
+            //var oDiv = $('<div>'); //创建标签
+            /*var oDiv = $('<div>div</div>'); //创建标签和内容
+            $('body').append(oDiv);*/
+
+
+            $('#btn1').click(function(){
+                //动态创建页面布局
+                var oLogin = $('<div id="login"><p>用户名：<input type="text"></p><p>密码：<input type="text"></p><div id="close"> X </div></div>');
+                //添加到页面
+                $('body').append(oLogin);
+
+                oLogin.css('left',($(window).width() - oLogin.outerWidth())/2);
+                oLogin.css('top',($(window).height() - oLogin.outerHeight())/2);
+
+                $(window).on('resize scroll', function(){
+                    oLogin.css('left',($(window).width() - oLogin.outerWidth())/2);
+                    oLogin.css('top',($(window).height() - oLogin.outerHeight())/2 + $(window).scrollTop());
+                });
+
+                $('#close').click(function(){
+                    oLogin.remove();
+                });
+            })
+
+
+        });
+    </script>
+</head>
+<body style="height: 2000px;">
+<input type="button" value="点击" id="btn1">
+<!-- <div id="login">
+    <p>用户名：<input type="text"></p>
+    <p>密码：<input type="text"></p>
+    <div id="close"> X </div>
+</div> -->
+</body>
+</html>

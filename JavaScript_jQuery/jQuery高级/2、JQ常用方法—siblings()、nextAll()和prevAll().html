@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—siblings()、nextAll()和prevAll()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //siblings():获取当前元素的所有兄弟节点，参数是筛选功能
+        //nextAll():获取当前元素的下面的兄弟节点，参数是筛选功能
+        //prevAll():获取当前元素的上面的兄弟节点，参数是筛选功能
+        $(function(){
+            //$('span').siblings().css('background','red');
+            //$('p').nextAll().css('background','red');
+            $('p').prevAll().css('background','red');
+        });
+    </script>
+</head>
+<body>
+<div id="div1" class="box">div1
+    <div id="div2">div2</div>
+</div>
+<span>span</span>
+<p>ppp</p>
+<h1>h1h1h1h</h1>
+<h2>h2h2h2h</h2>
+<h3>h3h3h3h</h3>
+<em>ememem</em>
+</body>
+</html>

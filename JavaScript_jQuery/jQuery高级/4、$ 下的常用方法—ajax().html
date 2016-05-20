@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4、$ 下的常用方法—ajax()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        $.ajax({
+            url : 'xxx.php',
+            data : 'name = hello & age = 20',
+            type : 'post',
+            success : function(data){
+                alert(1);
+            },
+            error : function(){
+                alert(2);
+            }
+        })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—clone()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //clone(): 克隆节点，参数true，作用是可以复制之前操作行为
+        $(function(){
+            $('div').click(function(){
+                alert(123);
+            });
+            //$('div').clone().appendTo('span');//克隆div并添加到span 里面
+            $('div').clone(true).appendTo('span');//克隆div并添加到span 里面
+
+        });
+    </script>
+</head>
+<body>
+<div>div1</div>
+<span>span</span>
+
+</body>
+</html>

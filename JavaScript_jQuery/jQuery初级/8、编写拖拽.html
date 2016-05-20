@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8、编写拖拽</title>
+    <style>
+        div{width: 100px; height: 100px;background: cadetblue; position: absolute; }
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+
+        $(function(){
+            var disX = 0;
+            var disY = 0;
+            $('div').mousedown(function(ev){
+                disX = ev.pageX - $(this).offset().left;
+                disY = ev.pageY - $(this).offset().top;
+
+                $(document).mousemove(function(ev){
+                    $('div').css('left', ev.pageX - disX);
+                    $('div').css('top', ev.pageY - disY);
+                });
+                $(document).mouseup(function(ev){
+                    $(document).off();
+                });
+                return false;
+            })
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

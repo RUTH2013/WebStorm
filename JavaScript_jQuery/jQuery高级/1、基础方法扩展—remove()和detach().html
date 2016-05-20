@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1、基础方法扩展—remove()和detach()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //remove():删除节点   包括元素之前的所有操作
+        //detach():与remove 方法一样，但是会保留元素之前的所有操作行为
+        $(function(){
+            $('div').click(function(){
+                alert(123);
+            });
+            //var oDiv = $('div').remove();
+            var oDiv = $('div').detach();
+            $('body').append(oDiv);
+
+        });
+    </script>
+</head>
+<body>
+<div>div1<span>span</span></div>
+<div>div2</div>
+<div>div3</div>
+</body>
+</html>

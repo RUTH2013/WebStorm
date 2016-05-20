@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7、JQ常用方法—val()、size()和each()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+
+        $(function(){
+            alert( $('input').val() ); //获取value值
+            $('input').val(456) ;//设置value值
+            alert($('li').size());//获取li的长度   ->4
+
+            $('li').each(function(i,elem){// i是下标  elem 是每个元素
+                $(elem).html(i);
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="123">
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

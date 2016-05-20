@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—add()和slice()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            var elem = $('div');
+            var elem2 = elem.add('span');
+            elem.css('color' , 'red');
+            elem2.css('background', 'yellow');
+            $('li').slice(1,4).css('background', 'blue');
+        });
+    </script>
+</head>
+<body>
+<div>div1</div>
+<span>span</span>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—parentsUntil()、nextUntil()和prevUntil()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //parentsUntil():截止到某个祖先节点，参数是筛选功能
+        //nextUntil():从当前元素的向下截止到某个兄弟节点，参数是筛选功能
+        //prevUntil():从当前元素的向上截止到某个兄弟节点，参数是筛选功能
+        $(function(){
+            //$('#div2').parentsUntil('#div1').css('background','red');
+            //$('p').nextUntil('h3').css('background','red');
+            $('h3').prevUntil('span').css('background','red');
+        });
+    </script>
+</head>
+<body>
+<div id="div1" class="box">div1
+    <div id="div2">div2</div>
+</div>
+<span>span</span>
+<p>ppp</p>
+<h1>h1h1h1h</h1>
+<h2>h2h2h2h</h2>
+<h3>h3h3h3h</h3>
+<em>ememem</em>
+</body>
+</html>

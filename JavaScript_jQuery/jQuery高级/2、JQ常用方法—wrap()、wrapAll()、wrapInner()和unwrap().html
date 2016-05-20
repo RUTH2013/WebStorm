@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—wrap()、wrapAll()、wrapInner()和unwrap()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //wrap(): 包装
+        //wrapAll(): 整体包装
+        //wrapInner(): 内部包装
+        //unwrap(): 删除包装（删除父级，不包括body）
+        $(function(){
+            //$('span').wrap('<div>');//为每个span 外面用div包装起来
+            //$('span').wrapAll('<div>');//将全部span用一个div包装起来
+            //$('span').wrapInner('<div>');//将每个span的内部用div包装起来
+            $('span').unwrap();
+
+        });
+    </script>
+</head>
+<body>
+<div>div1</div>
+<div>
+    <span>span</span>
+    <span>span</span>
+    <span>span</span>
+</div>
+
+
+</body>
+</html>

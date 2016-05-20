@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—serialize()和serializeArray()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            //console.log( $('form').serialize() );  // ->a=1&a=2&a=3   string
+            console.log( $('form').serializeArray() );  // -> [Object { name="a",  value="1"}, Object { name="a",  value="2"}, Object { name="a",  value="3"}]
+        });
+    </script>
+</head>
+<body>
+<form>
+    <input type="text" name="a" value="1">
+    <input type="text" name="a" value="2">
+    <input type="text" name="a" value="3">
+</form>
+</body>
+</html>

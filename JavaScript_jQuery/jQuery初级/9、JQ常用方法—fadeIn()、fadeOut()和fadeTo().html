@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9、JQ常用方法—fadeIn()、fadeOut()和fadeTo()</title>
+    <style>
+        *{margin: 0; padding: 0}
+        #div1{width: 100px; height: 100px; background: red; }
+        #div2{width: 100px; height: 100px; background: yellow;}
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            $('#div1').hover(function(){//鼠标移入
+                $(this).css('background' , 'blue');
+                //$('#div2').fadeOut(1000);//淡出；1秒的时间运动淡出
+                $('#div2').fadeTo(1000,0.2);
+            },function(){//鼠标移出
+                $(this).css('background' , 'red');
+                //$('#div2').fadeIn(1000);//淡入；1秒的时间运动淡入
+                $('#div2').fadeTo(1000,1);
+
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

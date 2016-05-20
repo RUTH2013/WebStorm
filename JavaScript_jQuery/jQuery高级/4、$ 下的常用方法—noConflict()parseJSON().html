@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4、$ 下的常用方法—noConflict()parseJSON()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //$.noConflict() : 防止冲突
+        //$.parseJSON()  : 将严格是字符串 解析成json
+        /*var miaov = $.noConflict();
+        var $ = 10;
+        miaov(function(){
+            miaov('body').css('background' , 'red');
+        }); */
+        var str = '{ "name":"leo"  }';
+        alert( $.parseJSON(str).name );
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

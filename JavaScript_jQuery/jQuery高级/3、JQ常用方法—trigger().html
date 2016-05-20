@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—trigger()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            $('#div1').on('click',function(){
+                alert(123);
+            });
+            $('#div1').trigger('click');//主动触发事件click
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div1</div>
+
+</body>
+</html>

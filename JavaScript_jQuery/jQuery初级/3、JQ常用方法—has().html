@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—has()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //has(): 包含
+        $(function(){
+            $('div').has('span').css('background' , 'red');//选择有包含span的div
+
+        });
+    </script>
+</head>
+<body>
+<div class="box">div1 <span>span span</span></div>
+<div>div2</div>
+</body>
+</html>

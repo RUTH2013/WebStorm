@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—ev.data()、ev.target()和ev.type()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        $(function(){
+            $('#div1').on('click',{name:'leo'},function(ev){
+                alert(ev.data.name);
+                alert(ev.target);
+                alert(ev.type);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+</body>
+</html>

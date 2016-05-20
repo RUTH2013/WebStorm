@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—attr()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //attr():设置属性
+        $(function(){
+            alert($('#div1').attr('title'));
+            $('#div1').attr('title','456');//为div 设置属性 title = 456
+            $('#div1').attr('class','box');//为div 设置属性 class = box
+        });
+    </script>
+</head>
+<body>
+<div id="div1" title="123">div1</div>
+</body>
+</html>

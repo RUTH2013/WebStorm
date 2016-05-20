@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7、JQ常用方法—ev()、pageX()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //ev()
+        $(function(){
+            $('div').click(function(ev){
+                //ev : event 对象
+                //ev.pageX (相当于文档)   : clientX(相当于可视区)
+                //ev.which(鼠标和键盘的键值)  : keyCode(键盘的键值)
+                ev.preventDefault();//阻止默认事件
+                ev.stopPropagation();//阻止冒泡的操作
+                return false;//阻止默认事件 + 阻止冒泡的操作
+            })
+
+        });
+    </script>
+</head>
+<body>
+<div> div </div>
+<span>span</span>
+</body>
+</html>

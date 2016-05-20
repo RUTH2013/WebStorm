@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1、基础方法扩展—outerWidth()</title>
+    <style>
+    #div1{width: 100px; height: 100px; background: blue;  display: none }
+</style>
+<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+<script>
+    //outerWidth(): 可以获取到隐藏元素的值
+    //offsetWidth(): 是获取不到隐藏元素的值
+    $(function(){
+        alert( $('#div1').get(0).offsetWidth );
+        alert( $('#div1').outerWidth() );
+
+    });
+</script>
+</head>
+<body>
+<div id="div1">div</div>
+
+</body>
+</html>

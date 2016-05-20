@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4、$ 下的常用方法—type()和trim()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //$.type():判断类型，更细致
+        //$.trim():去掉空格
+        $(function(){
+            //var a = 'hello';
+            var a = [1,2,3];
+            alert(typeof a);
+            alert($.type(a));
+
+            var str ='     hello        ';
+            alert('('+str+')');
+            alert('('+ $.trim(str)+')');
+        });
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+</body>
+</html>

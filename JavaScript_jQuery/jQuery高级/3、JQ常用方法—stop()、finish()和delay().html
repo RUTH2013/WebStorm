@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—stop()、finish()和delay()</title>
+    <style>
+        #div1,#div2{width: 100px ; height: 100px; background: red;margin: 10px;}
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //stop():阻止运动
+        // 第一个参数 ：true  阻止后续运动
+        // 第二个参数 ：true  可以立即停止到当前运动的指定目标点
+        //finish() : 立即停止到所有运动指定的目标点
+        //delay() : 延迟运动
+
+        $(function(){
+            $('#div1').click(function(){
+                $(this).animate({width:200},2000).delay(1000).animate({height:200},300); //延迟一秒再运动
+            });
+            $('#div2').click(function(){
+                //$('#div1').stop();//默认阻止当前运动
+                //$('#div1').stop(true); //阻止后续运动
+                //$('#div1').stop(true,true); //可以立即停止到当前运动的指定目标点
+                $('#div1').finish();//立即停止到所有运动指定的目标点
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div1</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—eq()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //eq():下标   eq(0)  第一个  eq(1)  第二个
+        $(function(){
+            $('div').find('h2').eq(1).css('background' , 'red');//在div中找到所有的h2的第二个
+
+        });
+    </script>
+</head>
+<body>
+<div class="box">
+    <h3>h3h3h3h3h</h3>
+    <h2>h2h2h2h2h</h2>
+    <h3>h3h3h3h3h</h3>
+    <h2>h2h2h2h2h</h2>
+    <h3>h3h3h3h3h</h3>
+    <h3>h3h3h3h3h</h3>
+    <h3>h3h3h3h3h</h3>
+</div>
+<h2>h2h2h2h</h2>
+</body>
+</html>

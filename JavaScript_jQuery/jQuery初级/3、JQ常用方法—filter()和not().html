@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—filter()和not()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //filter():过滤
+        //not():与filter()相反
+        $(function(){
+            //$('div').filter('.box').css('background' , 'red');//过滤出有.box的div
+            $('div').not('.box').css('background' , 'red');//选出没有.box 的div
+
+        });
+    </script>
+</head>
+<body>
+<div class="box">div1</div>
+<div>div2</div>
+</body>
+</html>

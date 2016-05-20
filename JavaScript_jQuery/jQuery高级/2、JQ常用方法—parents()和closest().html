@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2、JQ常用方法—parents()和closest()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //parents():获取当前元素的所有祖先节点，参数是筛选功能
+        //closest():获取当前元素的最近的祖先节点（包括当前元素自身），必须要有刷选参数
+        $(function(){
+            //$('#div2').parents('.box').css('background','red');
+            $('#div2').closest('.box').css('background','red');
+
+        });
+    </script>
+</head>
+<body class="box">
+<div id="div1" class="box">div1
+    <div id="div2">div2</div>
+</div>
+</body>
+</html>

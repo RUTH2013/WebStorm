@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5、JQ常用方法—scrollTop()</title>
+    <style>
+        div{width: 100px; height: 100px; background: red;padding: 10px; margin: 2px; border: 1px solid blue;}
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //scrollTop() : 向上（y轴）滚动距离
+
+        $(function(){
+            $(document).click(function(){
+                alert($(window).scrollTop());
+            });
+
+
+        });
+    </script>
+</head>
+<body style="height: 2000px;">
+<div>div </div>
+<span>span</span>
+</body>
+</html>

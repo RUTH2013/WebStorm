@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、JQ常用方法—next()和prev()</title>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //next():当前元素的下一个节点
+        //prev():当前元素的上一个节点
+        $(function(){
+            $('div').next().css('background' , 'red');
+            $('span').prev().css('background' , 'green');
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1" title="123">div1</div>
+<span>span</span>
+<p>pppppp</p>
+</body>
+</html>

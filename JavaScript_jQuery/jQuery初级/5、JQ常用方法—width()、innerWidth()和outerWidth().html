@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5、JQ常用方法—width()、innerWidth()和outerWidth()</title>
+    <style>
+        div{width: 100px; height: 100px; background: red;padding: 10px; margin: 2px; border: 1px solid blue;}
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+
+        $(function(){
+            alert( $('div').width() );//样式宽
+            alert( $('div').innerWidth() );//样式宽+padding
+            alert( $('div').outerWidth() );//样式宽+padding+border
+            alert( $('div').outerWidth(true) );//样式宽+padding+border+margin
+        });
+    </script>
+</head>
+<body>
+<div>div </div>
+</body>
+</html>

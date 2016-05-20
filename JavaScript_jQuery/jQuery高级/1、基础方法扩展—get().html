@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1、基础方法扩展—get()</title>
+
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+        //get():就是把JQ转成原生JS
+        $(function(){
+            //alert( $('#div1').get(0).innerHTML ) ;
+            for(var i=0; i<$('li').get().length; i++){
+                $('li').get(i).style.background = 'red';
+                //$('li')[i].style.background = 'red';
+            }
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1">div</div>
+<ul>
+    <li>111111</li>
+    <li>222222</li>
+    <li>333333</li>
+    <li>444444</li>
+</ul>
+</body>
+</html>

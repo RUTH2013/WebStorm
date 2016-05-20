@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7、JQ常用方法—offsetParent()</title>
+    <style>
+        *{margin: 0; padding: 0}
+        #div1{width: 200px; height: 200px; background: red; overflow: hidden;margin: 20px;}
+        #div2{width: 100px; height: 100px; background: yellow;margin: 30px;}
+    </style>
+    <script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+    <script>
+
+        $(function(){
+            //$('#div2').parent().css('background', 'blue');//获取父级
+            $('#div2').offsetParent().css('background', 'blue');//获取有定位的父级
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+</body>
+</html>

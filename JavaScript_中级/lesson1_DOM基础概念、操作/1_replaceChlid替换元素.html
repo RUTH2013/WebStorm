@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replaceChlid替换元素</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oBtn = document.getElementById('btn');
+            var oP = document.getElementById('p1');
+            oBtn.onclick = function () {
+                document.body.replaceChild(oDiv,oP);
+            };
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1">div1</div>
+<input type="button" value="按钮" id="btn">
+<hr>
+<p id="p1">pppppppppp</p>
+</body>
+</html>

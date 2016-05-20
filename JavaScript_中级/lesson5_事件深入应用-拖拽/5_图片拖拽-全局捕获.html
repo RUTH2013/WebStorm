@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片拖拽-全局捕获</title>
+    <style>
+        #div1{width: 100px; height: 100px; background: cadetblue; position: absolute;}
+        #img1{position:absolute;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oImg = document.getElementById('img1');
+            oImg.onmousedown = function (ev) {
+                var ev = ev||event;
+                var disX =ev.clientX-this.offsetLeft;
+                var disY =ev.clientY-this.offsetTop;
+                if(oImg.setCapture){//设置全局捕获
+                    oImg.setCapture();
+                }
+                document.onmousemove = function (ev) {
+                    var ev = ev||event;
+                    oImg.style.left = ev.clientX -disX +'px';
+                    oImg.style.top = ev.clientY -disY +'px';
+
+
+                };
+                document.onmouseup = function () {
+                    document.onmousemove = document.onmouseup = null;
+                    if(oImg.releaseCapture){//释放全局捕获
+                        oImg.releaseCapture();
+                    }
+                };
+               return false;//阻止浏览器默认拖拽文字的效果
+
+            };
+
+        }
+    </script>
+</head>
+<body>
+16556953454855
+<div id="div1"></div>
+<img src="img/1.jpg" alt="" id="img1">
+</body>
+</html>

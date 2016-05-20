@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+    <script>
+
+        function setCookie(key,value,time){//设置cookie
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+time);
+            document.cookie = key + '=' + value +';expires=' + oDate.toGMTString();
+        }
+
+        function getCookie(key){//获得cookie
+            var arr1 = document.cookie.split(';');
+            for(var i=0; i<arr1.length; i++){
+                var arr2 = arr1[i].split('=');
+                if(arr2[0]==key){
+                    return decodeURI(arr2[1]);
+                }
+            }
+        }
+
+        function removeCookie(key){//移除cookie
+            setCookie(key,'',-1);
+        }
+
+        setCookie('sex','男',10);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getElementsByClassName</title>
+    <script>
+        window.onload = function () {
+            var oUl1 = document.getElementById('ul1');
+            var oUl2 = document.getElementById('ul2');
+            var aLi = getElementsByClassName(document,'li','box');
+            alert(aLi.length);
+            console.log(aLi);
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].style.background = 'blue';
+            }
+            function  getElementsByClassName(parent,tagName,className){//在parent父级下的类名为className的tagName标签
+                var aEls = parent.getElementsByTagName(tagName);//获取全部的元素'*'
+                var arr = [];
+                for(var i=0; i<aEls.length; i++){
+                    /*if(aEls[i].className == className){
+                        arr.push(aEls[i]);
+                    }*/
+                    var aClassName = aEls[i].className.split(' ');
+                    for(var j=0; j<aClassName.length; j++){
+                        if(aClassName[j] == className){
+                            arr.push(aEls[i]);
+                        }
+                    }
+                }
+                return arr;
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li class="box">111111</li>
+    <li>222222</li>
+    <li class="box box1">333333</li>
+    <li>444444</li>
+</ul>
+<ul id="ul2">
+    <li class="box">111111</li>
+    <li>222222</li>
+    <li class="box box1">333333</li>
+    <li>444444</li>
+</ul>
+<div>
+    <p>ppppppppppp</p>
+</div>
+</body>
+</html>

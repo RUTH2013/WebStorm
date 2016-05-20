@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>offsetParent父节点</title>
+    <style>
+        div{padding: 40px 50px;}
+        #div1{background: red;}
+        #div2{background: blue;}
+        #div3{background: yellow;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv3 = document.getElementById('div3');
+            alert(oDiv3.offsetParent.id);
+        }
+    </script>
+</head>
+<body id="body1">
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
+</body>
+</html>

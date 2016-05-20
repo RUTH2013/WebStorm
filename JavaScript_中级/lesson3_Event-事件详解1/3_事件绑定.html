@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script>
+        function fn1() {
+            alert(this);
+        }
+        function fn2() {
+            alert(2);
+        }
+
+        function blid(obj,evname,fn){ //绑定函数的封装
+            if(obj.addEventListener){
+                obj.addEventListener(evname,fn,false);
+            }else{
+                obj.attachEvent('on'+evname,function(){
+                    fn.call(obj);
+                });
+            }
+
+        }
+
+        blid(document,'click',fn1);
+        blid(document,'click',fn2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

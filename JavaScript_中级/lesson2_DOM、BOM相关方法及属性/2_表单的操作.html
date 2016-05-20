@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单的操作</title>
+    <script>
+        window.onload = function () {
+            var oForm = document.getElementById('form1');
+            oForm.text1.onchange = function () {
+                alert(this.value);
+            };
+            oForm.sex[0].onchange = function () {
+               // alert(1);
+                alert(this.value);
+            };
+            oForm.check[0].onchange = function () {
+                alert(1);
+            };
+            oForm.city.onchange = function () {
+                alert(this.value);
+            };
+            oForm.btn.onclick = function () {
+                //alert(oForm.sex[0].checked);
+                for(var i=0; i<oForm.sex.length; i++){
+                    if(oForm.sex[i].checked){
+                        alert(oForm.sex[i].value +'被选中了');
+                    }else{
+                        alert(oForm.sex[i].value +'是非选中状态');
+                    }
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+<form action="" id="form1">
+    <input type="text" name="text1" value="内容">
+    <input type="radio" name="sex" value="男">男
+    <input type="radio" name="sex" value="女" checked>女
+    <input type="checkbox" name="check" value="html" checked>html
+    <input type="checkbox" name="check" value="css">css
+    <input type="checkbox" name="check" value="js">js
+    <select name="city" id="">
+        <option value=""> 请选择城市</option>
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+    </select>
+    <input type="button" value="按钮" name="btn">
+
+
+</form>
+</body>
+</html>

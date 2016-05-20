@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡—下拉菜单</title>
+    <style>
+        div{padding: 40px;}
+        #div1{width: 100px; height: 200px; border: 1px solid red;display: none;}
+
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function (ev){
+                var ev = ev||event;
+                ev.cancelBubble = true;//阻止当前对象的当前时间的冒泡
+                oDiv1.style.display = 'block';
+            };
+            document.onclick = function () {
+                oDiv1.style.display = 'none';
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="div1"></div>
+<p>ppppppppp</p>
+<p>ppppppppp</p>
+<p>ppppppppp</p>
+<p>ppppppppp</p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加、移除Class</title>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            addClass(oDiv,'box1');
+            removeClass(oDiv2,'box');
+
+            function addClass(obj,className){//添加类
+                if(obj.className == ''){//若原来没有Class
+                    obj.className = className;
+                }else{//若原来有Class
+                    var arrClassName = obj.className.split(' ');
+                    var _index = drrIndexOf(arrClassName,className);
+                    if(_index == -1){//若要添加的class在原来的class中不存在
+                        obj.className += ' '+className;
+                    }
+                }
+            }
+
+            function  removeClass(obj,className){//移除class
+                if(obj.className !== ''){//若原来有Class
+                    var arrClassName = obj.className.split(' ');
+                    var _index = drrIndexOf(arrClassName,className);
+                    if(_index != -1){//若要移除的class在原来的class中存在
+                        arrClassName.splice(_index,1);
+                        obj.className = arrClassName.join(' ');
+                    }
+                }
+            }
+
+            function drrIndexOf(arr,v){//判断arr数组是否存在与V值相同的值
+                for(var i=0; i<arr.length; i++){
+                    if(arr[i] == v){
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1" class="box">div1</div>
+<div id="div2" class="box box2 box3">div1</div>
+</body>
+</html>

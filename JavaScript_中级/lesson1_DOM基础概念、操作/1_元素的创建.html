@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素的创建</title>
+    <script>
+        window.onload = function () {
+            var oText = document.getElementById('text1');
+            var oBtn = document.getElementById('btn1');
+            var oUl = document.getElementById('ul1');
+            oBtn.onclick = function () {
+                var oLi = document.createElement('li');
+                oLi.innerHTML = oText.value ;
+                var oA = document.createElement('a');
+                oA.innerHTML = '删除';
+                oA.href = 'javascript:;';
+                oA.onclick = function () {
+                    oUl.removeChild(this.parentNode);
+                };
+                oLi.appendChild(oA);
+
+                //oUl.appendChild(oLi);//从后面添加
+                //oUl.insertBefore(oLi,oUl.children[0]);//在元素前面插入新的元素
+                if(oUl.children[0]){    //处理兼容性问题
+                    oUl.insertBefore(oLi,oUl.children[0]);//在元素前面插入新的元素
+                }else {
+                    oUl.appendChild(oLi);//从后面添加
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="text1">
+<input type="button" value="留言" id="btn1">
+<ul id="ul1"></ul>
+
+</body>
+</html>

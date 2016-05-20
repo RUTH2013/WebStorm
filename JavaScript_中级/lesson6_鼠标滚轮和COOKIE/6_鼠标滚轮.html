@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滚轮</title>
+    <style>
+        #div1{width: 100px; height: 100px; background: cadetblue;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onmousewheel = fn1;
+            if(oDiv.addEventListener){
+                oDiv.addEventListener('DOMMouseScroll',fn1,false);
+            }
+            function fn1(ev){
+                //alert(1);
+                var ev = ev||event;
+                var bool = true;//用来判断滚轮上下: 上是true ,下是false
+                if(ev.wheelDelta){
+                    bool = ev.wheelDelta>0 ? true : false;
+                }else {
+                    bool = ev.detail<0 ? true : false;
+                }
+
+                if(bool){
+                    this.style.height = this.offsetHeight -10 +'px';
+                }else{
+                    this.style.height = this.offsetHeight +10 +'px';
+                }
+                if(ev.preventDefault){//阻止火狐浏览器本身自带的滚动事件
+                    ev.preventDefault();
+                }
+                return false;//阻止浏览器本身自带的滚动事件
+
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
